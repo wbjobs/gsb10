@@ -1,0 +1,47 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  background: #0f1420; color: #dde3ee; min-height: 100vh;
+}
+header {
+  padding: 16px 24px; background: #161d2e; border-bottom: 1px solid #262f47;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+}
+h1 { font-size: 18px; font-weight: 600; }
+#stats-bar { display: flex; gap: 14px; font-size: 12px; color: #8b96b0; }
+#stats-bar span { background: #1d2740; padding: 4px 10px; border-radius: 10px; }
+main { max-width: 1080px; margin: 0 auto; padding: 20px 16px; display: grid; gap: 20px; }
+.panel { background: #161d2e; border: 1px solid #262f47; border-radius: 12px; padding: 16px 20px; }
+.panel-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+h2 { font-size: 15px; font-weight: 600; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; }
+button {
+  background: #2b6cff; color: #fff; border: none; border-radius: 8px;
+  padding: 7px 14px; font-size: 13px; cursor: pointer; transition: background .15s;
+}
+button:hover { background: #1f5ae0; }
+button:disabled { background: #3a4358; cursor: not-allowed; }
+button.danger { background: #3a2430; color: #ff7d92; }
+button.danger:hover { background: #4d2d3d; }
+button.recording { background: #d33; animation: pulse 1s infinite; }
+@keyframes pulse { 50% { opacity: .6; } }
+.status { font-size: 12px; color: #8b96b0; min-height: 18px; margin-bottom: 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid #232c44; }
+th { color: #8b96b0; font-weight: 500; font-size: 12px; }
+td .del { background: none; color: #ff7d92; padding: 2px 8px; font-size: 12px; }
+tr:hover td { background: #1a2338; }
+.match-card {
+  background: #1a2338; border: 1px solid #2a3552; border-radius: 10px;
+  padding: 12px 16px; margin-bottom: 10px; cursor: pointer;
+}
+.match-card:hover { border-color: #2b6cff; }
+.match-card .title { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }
+.match-card .badge { background: #14401f; color: #5ee08a; font-size: 12px; padding: 2px 10px; border-radius: 10px; }
+.match-card .segs { font-size: 12px; color: #8b96b0; }
+.match-card .segs span { display: inline-block; margin-right: 14px; }
+.seg-hl { color: #ffb454; }
+#compare-view { margin-top: 14px; display: none; }
+#compare-view canvas { display: block; width: 100%; background: #101728; border-radius: 8px; margin-bottom: 8px; }
+#scan-results .match-card { cursor: default; }
+.empty { color: #5b6580; }

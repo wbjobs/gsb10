@@ -1,0 +1,11 @@
+{
+  "name": "audio-fingerprint-dedup",
+  "version": "1.0.0",
+  "private": true,
+  "description": "纯前端音频指纹重复检测（Web Audio + Web Worker + IndexedDB）",
+  "scripts": {
+    "test": "node test/run-tests.js",
+    "test:integration": "node test/integration-test.js",
+    "serve": "python3 -m http.server 8080"
+  }
+}
