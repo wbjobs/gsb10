@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>本地音频指纹比对</title>
+    <link rel="stylesheet" href="./styles/app.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>本地音频指纹库</h1>
+        <p>Web Audio + Web Worker + IndexedDB，音频与指纹完全保留在浏览器本地。</p>
+      </div>
+      <div class="stats">
+        <span id="trackCount">0 首</span>
+        <span id="fingerprintCount">0 指纹</span>
+        <span id="memoryEstimate">索引内存 --</span>
+        <button id="unloadIndex" class="ghost" type="button">卸载内存索引</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel library-panel">
+        <div class="panel-title">
+          <h2>指纹库</h2>
+          <label class="button">
+            导入音频
+            <input id="libraryFiles" type="file" accept="audio/*" multiple hidden>
+          </label>
+        </div>
+        <div class="record-row">
+          <button id="recordButton" type="button">开始录音</button>
+          <span id="recordStatus">未录音</span>
+          <label class="inline"><input id="recordAsLibrary" type="checkbox" checked> 录完后入库</label>
+        </div>
+        <div class="progress"><div id="importProgress"></div></div>
+        <p id="libraryMessage" class="muted"></p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>名称</th><th>时长</th><th>指纹</th><th>重复</th><th></th></tr>
+            </thead>
+            <tbody id="libraryRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel query-panel">
+        <div class="panel-title">
+          <h2>重复片段检测</h2>
+          <label class="button secondary">
+            选择查询音频
+            <input id="queryFile" type="file" accept="audio/*" hidden>
+          </label>
+        </div>
+        <p id="queryStatus" class="muted">可导入文件，或在录音时取消“录完后入库”。</p>
+        <div class="player-card">
+          <div>
+            <strong id="queryName">查询音频</strong>
+            <span id="queryTime" class="muted"></span>
+          </div>
+          <audio id="queryAudio" controls preload="metadata"></audio>
+          <canvas id="queryWaveform"></canvas>
+        </div>
+        <div id="matchSummary" class="summary"></div>
+        <div id="matches" class="matches"></div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

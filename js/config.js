@@ -1,0 +1,22 @@
+export const SAMPLE_RATE = 8000;
+export const FFT_SIZE = 512;
+export const HOP_SIZE = 256;
+export const FRAME_RATE = SAMPLE_RATE / HOP_SIZE;
+export const MIN_BIN = 4;
+export const MAX_BIN = 220;
+export const BAND_COUNT = 5;
+export const PEAKS_PER_BAND = 3;
+export const TARGET_DELTA_MIN = 8;
+export const TARGET_DELTA_MAX = 64;
+export const MAX_TARGETS_PER_ANCHOR = 2;
+export const ANCHOR_FRAME_STRIDE = 2;
+export const ANCHOR_PEAK_STRIDE = 2;
+export const MAX_DELTA = 4095;
+export const HASH_BITS = 20;
+export const TIME_BITS = 6;
+export const FREQ_BITS = 7;
+export const MAX_TRACKS = 4095;
+export const MAX_FRAMES = 1048575;
+export const MIN_MATCHES = 12;
+
+export const TIME_SCALE = HOP_SIZE / SAMPLE_RATE;

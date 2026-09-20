@@ -1,0 +1,11 @@
+{
+  "name": "local-audio-fingerprint",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "python3 -m http.server 8080",
+    "test": "node tests/basic-test.mjs",
+    "benchmark": "node tests/benchmark.mjs 180 100"
+  }
+}
